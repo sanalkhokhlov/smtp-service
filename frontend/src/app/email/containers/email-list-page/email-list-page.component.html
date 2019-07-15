@@ -1,0 +1,19 @@
+<div class="email-list__header">
+    <input type="text" class="form-control" placeholder="Search..." [ngModel]="searchQuery" (ngModelChange)="searchQueryChange($event)" />
+    <button *ngIf="selectedItems.length" class="btn btn-danger email-list__btn_delete-selected-items" (click)="deleteSelectedItemsClick()">Delete Selected Items</button>
+</div>
+<div class="email-list__table">
+    <email-table [items]="data.items"
+                 [(selectedItems)]="selectedItems"
+                 (downloadEmail)="downloadEmailClick($event)"
+                 (showEmailSource)="showEmailSource($event)"
+                 (deleteEmail)="deleteEmailClick($event)"
+                 (tag)="tagClick($event)">
+    </email-table>
+</div>
+<pagination [boundaryLinks]="true"
+            [maxSize]="pagination.maxSize"
+            [itemsPerPage]="pagination.limit"
+            [totalItems]="data.count"
+            (pageChanged)="pageChanged($event)">
+</pagination>

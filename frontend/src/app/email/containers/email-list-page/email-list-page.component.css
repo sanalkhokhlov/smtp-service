@@ -1,0 +1,12 @@
+.email-list__table {
+    table-layout: fixed;
+    margin-top: 20px;
+}
+
+.email-list__header {
+    display: flex;
+}
+
+.email-list__btn_delete-selected-items {
+    margin-left: 20px;
+}

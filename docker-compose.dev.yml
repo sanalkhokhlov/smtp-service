@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  server:
+    build: .
+    image: smtp-service:latest
+    container_name: "smtp-service"
+    hostname: "smtp-service"
+    restart: always
+
+    logging:
+      driver: json-file
+      options:
+          max-size: "10m"
+          max-file: "5"
+    ports:
+      - "3000:3000"
+      - "2525:2525"
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+  
+  mongodb:
+    image: mongo:latest
+    container_name: "smtp-service-mongodb"
+    restart: always
+    ports:
+      - "27017:27017"

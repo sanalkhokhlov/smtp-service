@@ -1,0 +1,41 @@
+.email-table {
+    table-layout: fixed;
+}
+
+.email-table thead tr th, .email-table tbody tr td {
+    font-size: 13px;
+    word-break: break-word;
+}
+
+.email-table__action-item+.email-table__action-item {
+    margin-left: 10px;
+}
+
+.email-row__date {
+    width: 160px;
+}
+
+.email-row__actions {
+    width: 270px;
+}
+
+.email-table__col_checkbox {
+    width: 40px;
+}
+
+.email-table__tag {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.email-table__tag + .email-table__tag {
+    margin-left: 10px;
+}
+
+.email-table__row {
+    cursor: pointer;
+}
+
+.email-table__row_checked {
+    background-color: rgba(0,0,0,.075);
+}
