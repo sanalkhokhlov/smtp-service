@@ -3,7 +3,7 @@ version: '2'
 services:
   server:
     build: .
-    image: smtp-service:latest
+    image: sanalkhokhlov/smtp-service:latest
     container_name: "smtp-service"
     hostname: "smtp-service"
     restart: always

@@ -1,7 +1,5 @@
 FROM golang:1.12-alpine3.9 AS build-backend
 
-# RUN apk add -t git
-
 WORKDIR /go/src/github.com/sanalkhokhlov/smtp-service/backend
 ADD backend /go/src/github.com/sanalkhokhlov/smtp-service/backend
 
