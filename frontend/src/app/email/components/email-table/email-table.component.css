@@ -3,12 +3,18 @@
 }
 
 .email-table thead tr th, .email-table tbody tr td {
-    font-size: 13px;
-    word-break: break-word;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.email-table__action-item {
+    cursor: pointer;
 }
 
 .email-table__action-item+.email-table__action-item {
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .email-row__date {

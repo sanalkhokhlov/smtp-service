@@ -16,16 +16,16 @@
         <tr *ngFor="let i of items" [ngClass]="{'email-table__row_checked': isChecked(i.id)}" class="email-table__row" (click)="rowCheck($event, i.id)">
             <td><input type="checkbox" [checked]="isChecked(i.id)"></td>
             <td>{{i.date | date: 'MM/dd/yyyy HH:mm'}}</td>
-            <td>{{i.from}}</td>
+            <td [tooltip]="i.from" container="body">{{i.from}}</td>
             <td [tooltip]="i.to" container="body">{{i.to}}</td>
-            <td>{{i.subject}}</td>
+            <td [tooltip]="i.subject" container="body">{{i.subject}}</td>
             <td>
                 <span *ngFor="let item of (i.tags || [])" class="badge badge-secondary email-table__tag" (click)="tagClick($event, item)">{{item}}</span>
             </td>
             <td>
-                <button class="btn btn-default btn-sm email-table__action-item" (click)="showEmailSourceClick($event, i.id)">View Source</button>
-                <button class="btn btn-default btn-sm email-table__action-item" (click)="downloadEmailClick($event, i.id)">Download</button>
-                <button class="btn btn-default btn-sm email-table__action-item" (click)="deleteEmailClick($event, i.id)">Delete</button>
+                <a href="" class="email-table__action-item" (click)="showEmailSourceClick($event, i.id)">View Source</a>
+                <a href="" class="email-table__action-item" (click)="downloadEmailClick($event, i.id)">Download</a>
+                <a href="" class="email-table__action-item" (click)="deleteEmailClick($event, i.id)">Delete</a>
             </td>
         </tr>
     </tbody>

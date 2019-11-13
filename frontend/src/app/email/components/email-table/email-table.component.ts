@@ -54,16 +54,19 @@ export class EmailTableComponent implements OnInit {
 
     downloadEmailClick(event: MouseEvent, id: string) {
         event.stopPropagation();
+        event.preventDefault();
         this.downloadEmail.next(id);
     }
 
     showEmailSourceClick(event: MouseEvent, id: string) {
         event.stopPropagation();
+        event.preventDefault();
         this.showEmailSource.next(id);
     }
 
     deleteEmailClick(event: MouseEvent, id: string) {
         event.stopPropagation();
+        event.preventDefault();
         this.deleteEmail.next(id);
     }
 
